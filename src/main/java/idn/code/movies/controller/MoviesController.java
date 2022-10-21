@@ -1,15 +1,29 @@
 package idn.code.movies.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import idn.code.movies.dto.BaseResponseDto;
+import idn.code.movies.dto.movie.FindByTitleRequestDto;
+import idn.code.movies.dto.movie.FindByTitleResponseDto;
+import idn.code.movies.dto.movie.GetAllMovies;
+import idn.code.movies.service.MovieService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/movie")
 public class MoviesController {
-    
-    @GetMapping
-    public String hello(){
-        return "hello World";
+
+    @Autowired
+    private MovieService movieService;
+
+    @GetMapping("/getAllMovie")
+    public BaseResponseDto<GetAllMovies> getAll(){
+        return movieService.getAll();
     }
+
+    @PostMapping("/findByTitle")
+    public BaseResponseDto<FindByTitleResponseDto> findByTitle(@RequestBody FindByTitleRequestDto req){
+        return  movieService.findByTitle(req);
+    }
+
+
 }
