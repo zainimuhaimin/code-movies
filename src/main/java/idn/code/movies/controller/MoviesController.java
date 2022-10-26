@@ -16,12 +16,12 @@ public class MoviesController {
     private MovieService movieService;
 
     @GetMapping("/getAllMovie")
-    public BaseResponseDto<GetAllMovies> getAll(){
+    public GetAllMovies getAll(){
         return movieService.getAll();
     }
 
     @PostMapping("/findByTitle")
-    public BaseResponseDto<FindByTitleResponseDto> findByTitle(@RequestBody FindByTitleRequestDto req){
+    public FindByTitleResponseDto findByTitle(@RequestBody FindByTitleRequestDto req){
         return  movieService.findByTitle(req);
     }
 

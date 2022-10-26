@@ -19,20 +19,20 @@ public class MovieService {
     private MovieRepository movieRepository;
 
 
-    public BaseResponseDto<GetAllMovies> getAll(){
+    public GetAllMovies getAll(){
         List<MovieModel> moviesModel = movieRepository.findAll();
 
-        return ResponseUtil.success(GetAllMovies.builder()
+        return GetAllMovies.builder()
                         .movies(moviesModel)
-                .build());
+                .build();
     }
 
-    public BaseResponseDto<FindByTitleResponseDto> findByTitle(FindByTitleRequestDto req){
+    public FindByTitleResponseDto findByTitle(FindByTitleRequestDto req){
         List<MovieModel> moviesResp = movieRepository.findByTitleContainsIgnoreCase(req.getTitle());
 
-        return ResponseUtil.success(FindByTitleResponseDto.builder()
+        return FindByTitleResponseDto.builder()
                        .movieLists(moviesResp)
-                .build());
+                .build();
 
     }
 
