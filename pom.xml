@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>idn.code</groupId>
 	<artifactId>movies</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	<name>movies</name>
 	<description>Movies Project For Self Bootcamp</description>
 	<properties>
