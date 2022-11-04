@@ -112,9 +112,9 @@
 						<configuration>
 							<classifier>data-model</classifier>
 							<includes>
-								<include>**/dto/*</include>
-								<include>**/constant/*</include>
-								<include>**/model/*</include>
+								<include>**/dto/**</include>
+								<include>**/constant/**</include>
+								<include>**/model/**</include>
 							</includes>
 						</configuration>
 					</plugin>
